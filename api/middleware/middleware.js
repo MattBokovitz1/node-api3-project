@@ -16,7 +16,7 @@ function validateUserId(req, res, next) {
         req.user = user;
         next();
       } else {
-        res.status(400).json({ message: "invalid user id" });
+        res.status(404).json({ message: "user not found" });
       }
     })
     .catch((error) => {
@@ -52,7 +52,7 @@ function validatePostId(req, res, next) {
         req.post = post;
         next();
       } else {
-        res.status(400).json({ message: "invalid post id" });
+        res.status(404).json({ message: "post not found" });
       }
     })
     .catch((error) => {
