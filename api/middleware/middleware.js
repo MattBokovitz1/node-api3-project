@@ -9,8 +9,7 @@ function logger(req, res, next) {
 }
 
 function validateUserId(req, res, next) {
-  userParams
-    .getById(req.params.id)
+  User.getById(req.params.id)
     .then((user) => {
       if (user) {
         req.user = user;
